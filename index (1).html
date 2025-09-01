@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Market</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+      color: #eaeaea;
+      padding-top: 60px; /* space for navbar */
+    }
+
+    /* Navigation bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(10, 10, 20, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #7ddfff;
+    }
+
+    .burger {
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Side menu (hidden off screen by default) */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%; /* fully hidden */
+      width: 250px;
+      height: 100%;
+      background: #14141e;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.6);
+      transition: right 0.3s ease-in-out;
+      padding: 20px;
+      z-index: 1500;
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    /* Close button inside menu */
+    .close-btn {
+      font-size: 28px;
+      color: #fff;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .side-menu h2 {
+      color: #7ddfff;
+      font-size: 1.2rem;
+      margin: 60px 0 20px 0; /* space for close button */
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 15px 0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .side-menu a:hover {
+      color: #7ddfff;
+    }
+
+    /* File boxes */
+    .file-box {
+      background: rgba(20, 20, 30, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .file-box h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #7ddfff;
+    }
+
+    .tree {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+      position: relative;
+    }
+    .tree::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #444;
+    }
+    .tree li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+    .tree li::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #7ddfff;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #c3e9ff;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .download:hover {
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <h1>Black Market</h1>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <span class="close-btn" onclick="toggleMenu()">×</span>
+    <h2>Menu</h2>
+    <a href="https://www.google.com" target="_blank">Exit</a>
+    <a href="https://www.facebook.com/mark.angelo.dacanay.2025?mibextid=JRoKGi">Contact Developer</a>
+    <a href="https://www.facebook.com/mark.angelo.dacanay.2025?mibextid=JRoKGi">Contact For Thesis</a>
+  </div>
+
+  <!-- File 1 -->
+  <div class="file-box">
+    <h2>File 1</h2>
+    <ul class="tree">
+      <li><span class="label">File Title:</span> Calculator Area</li>
+      <li><span class="label">File Type:</span> JAVA</li>
+      <li><span class="label">File Size:</span> KB</li>
+      <li><span class="label">Description:</span> Simple Java Cose</li>
+    </ul>
+    <a class="download" href="https://www.mediafire.com/file/rq5mfbf137xst7p/calcArea.java/file?dkey=hpvcac8pt9u&r=252" download>⬇ Download File 1</a>
+  </div>
+
+  <!-- File 2 -->
+  <div class="file-box">
+    <h2>File 2</h2>
+    <ul class="tree">
+      <li><span class="label">File Title:</span> Simple IF ELSE java</li>
+      <li><span class="label">File Type:</span> Java</li>
+      <li><span class="label">File Size:</span> KB</li>
+      <li><span class="label">Description:</span> Simple Java File IF Else</li>
+    </ul>
+    <a class="download" href="https://www.mediafire.com/file/5ntv66aw0sn6g14/ifelse.java/file?dkey=gzgbs024d17&r=1873" download>⬇ Download File 2</a>
+  </div>
+
+  <!-- File 3 -->
+  <div class="file-box">
+    <h2>File 3</h2>
+    <ul class="tree">
+      <li><span class="label">File Title:</span> Answer Key 🔑</li>
+      <li><span class="label">File Type:</span> PDF</li>
+      <li><span class="label">File Size:</span> None</li>
+      <li><span class="label">Description:</span> None</li>
+    </ul>
+    <a class="download" href="google.com" download>⬇ Download File 3</a>
+  </div>
+
+  <!-- File 4 -->
+  <div class="file-box">
+    <h2>File 4</h2>
+    <ul class="tree">
+      <li><span class="label">File Title:</span> None</li>
+      <li><span class="label">File Type:</span> None</li>
+      <li><span class="label">File Size:</span> None</li>
+      <li><span class="label">Description:</span> None.</li>
+    </ul>
+    <a class="download" href="Google.com" download>⬇ Download File 4</a>
+  </div>
+
+  <!-- File 5 -->
+  <div class="file-box">
+    <h2>File 5</h2>
+    <ul class="tree">
+      <li><span class="label">File Title:</span> None</li>
+      <li><span class="label">File Type:</span> None</li>
+      <li><span class="label">File Size:</span> None</li>
+      <li><span class="label">Description:</span> None.</li>
+    </ul>
+    <a class="download" href="Google.com" download>⬇ Download File 5</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
